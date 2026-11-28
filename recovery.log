@@ -20,6 +20,9 @@ I:Symlinking /dev/block/dm-1 => /dev/block/bootdevice/by-name/system
 I:Symlinking /dev/block/dm-1 => /dev/block/by-name/system 
 I:Processing '/system_ext'
 I:Trying to prepare system_ext from super partition
+I:Can't probe device /dev/block/dm-2
+I:Failed to mount '/system_ext' (Invalid argument)
+I:Actual block device: '/dev/block/dm-2', current file system: 'ext4'
 I:Symlinking /dev/block/dm-2 => /dev/block/bootdevice/by-name/system_ext 
 I:Symlinking /dev/block/dm-2 => /dev/block/by-name/system_ext 
 I:Processing '/product'
@@ -28,6 +31,9 @@ I:Symlinking /dev/block/dm-0 => /dev/block/bootdevice/by-name/product
 I:Symlinking /dev/block/dm-0 => /dev/block/by-name/product 
 I:Processing '/vendor'
 I:Trying to prepare vendor from super partition
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
 I:Symlinking /dev/block/dm-3 => /dev/block/bootdevice/by-name/vendor 
 I:Symlinking /dev/block/dm-3 => /dev/block/by-name/vendor 
 I:Processing '/data'
@@ -74,6 +80,9 @@ I:found module to dedupe: chipone_tddi_v2_mmi.ko
 I:found module to dedupe: sensors_class.ko
 I:mounting /tmp/vendor/lib/modules/5.4-gki on /vendor/lib/modules/5.4-gki
 I:Checking mounted /vendor
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
 I:Checking directory: /vendor/lib/modules
 I:number of modules loaded by init: 7
 I:found module to dedupe: ilitek_v3_mmi.ko
@@ -95,7 +104,6 @@ I:found module to dedupe: sensors_class.ko
 I:mounting /tmp/vendor/lib/modules/1.1 on /vendor/lib/modules/1.1
 I:Modules Loaded: 0
 I:Checking directory: /vendor/lib/modules/5.4-gki
-I:Unable to open module directory: /vendor/lib/modules/5.4-gki. Skipping
 I:number of modules loaded by init: 7
 I:found module to dedupe: ilitek_v3_mmi.ko
 I:found module to dedupe: mmi_info.ko
@@ -104,6 +112,7 @@ I:found module to dedupe: exfat.ko
 I:found module to dedupe: chipone_tddi_v2_mmi.ko
 I:found module to dedupe: sensors_class.ko
 I:mounting /tmp/vendor/lib/modules/5.4-gki on /vendor/lib/modules/5.4-gki
+I:Modules Loaded: 0
 I:Checking directory: /vendor_dlkm/lib/modules
 I:Unable to open module directory: /vendor_dlkm/lib/modules. Skipping
 I:number of modules loaded by init: 7
@@ -114,10 +123,28 @@ I:found module to dedupe: exfat.ko
 I:found module to dedupe: chipone_tddi_v2_mmi.ko
 I:found module to dedupe: sensors_class.ko
 I:mounting /tmp/vendor_dlkm/lib/modules on /vendor_dlkm/lib/modules
-I:Setting 'ro.crypto.dm_default_key.options_format.version' to '2' from /vendor/build.prop
-I:Setting 'ro.crypto.volume.metadata.method' to 'dm-default-key' from /vendor/build.prop
-I:Setting 'external_storage.casefold.enabled' to '1' from /vendor/build.prop
-I:Setting 'external_storage.sdcardfs.enabled' to '0' from /vendor/build.prop
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
+I:Deleting property 'ro.crypto.dm_default_key.options_format.version'
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
+I:Deleting property 'ro.crypto.volume.metadata.method'
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
+I:Deleting property 'external_storage.casefold.enabled'
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
+I:Deleting property 'external_storage.sdcardfs.enabled'
 I:GetFstabPath: /odm/etc/fstab.default
 I:GetFstabPath: /vendor/etc/fstab.default
 I:GetFstabPath: /system/etc/fstab.default
@@ -126,7 +153,11 @@ I:GetFstabPath: /fstab.default
 I:GetFstabPath: /first_stage_ramdisk/fstab.default
 I:GetFstabPath: /odm/etc/fstab.qcom
 I:GetFstabPath: /vendor/etc/fstab.qcom
-I:Fstab: /vendor/etc/fstab.qcom
+I:GetFstabPath: /system/etc/fstab.qcom
+I:GetFstabPath: /first_stage_ramdisk/system/etc/fstab.qcom
+I:GetFstabPath: /fstab.qcom
+I:GetFstabPath: /first_stage_ramdisk/fstab.qcom
+I:Fstab: /first_stage_ramdisk/fstab.qcom
 I:Reading /etc/additional.fstab
 I:Processing '/metadata'
 I:Unhandled flag: 'first_stage_mount'
@@ -144,7 +175,7 @@ I:Separate manifest doesn't exist for 'android.hardware.keymaster'
 I:/vendor/etc/vintf/manifest_holi.xml not found. Using default path for manifest.xml
 I:PageManager::LoadFileToBuffer loading filename: '/vendor/etc/vintf/manifest.xml' directly
 I:Looking for 'android.hardware.keymaster' service in manifest
-I:Found fqname in manifest: @4.1::IKeymasterDevice/default
+I:Found version in manifest: 4.1
 I:Keymaster_Ver::Using keymaster version '4.x' for decryption
 Starting the UI...
 Skipping adf graphics -- not present in build tree
@@ -168,6 +199,9 @@ I:Switching packages (splash)
 I:Can't probe device /dev/block/sde26
 I:Unable to mount '/data'
 I:Actual block device: '/dev/block/sde26', current file system: 'f2fs'
+I:Can't probe device /dev/block/dm-3
+I:Failed to mount '/vendor' (Invalid argument)
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
 I:unable to open zip archive /system_root/system/apex/com.google.android.tzdata2.apex. Reason: No such file or directory
 I:Skipping non-existent apex file: /system_root/system/apex/com.google.android.tzdata2.apex
 I:unable to open zip archive /system_root/system/apex/com.android.art.release.apex. Reason: No such file or directory
@@ -191,6 +225,12 @@ I:prepdecrypt::Script complete. Device ready for decryption.
 I:Unable to decrypt metadata encryption
 I:FBE setup failed. Trying FDE...
 Updating partition details...
+I:Can't probe device /dev/block/dm-2
+I:Unable to mount '/system_ext'
+I:Actual block device: '/dev/block/dm-2', current file system: 'ext4'
+I:Can't probe device /dev/block/dm-3
+I:Unable to mount '/vendor'
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
 I:Can't probe device /dev/block/sde26
 I:Unable to mount '/data'
 I:Actual block device: '/dev/block/sde26', current file system: 'f2fs'
@@ -672,25 +712,25 @@ ro.bootmode=normal
 ro.hardware=qcom
 ro.revision=pvt
 ro.bootloader=MBM-3.0-uefi-76e95ff7be65-260819-V1UGS35H.75-14-3-10-36fa40
-ro.boottime.adbd=2890900883
-ro.boottime.init=2522879738
-ro.boottime.init.selinux=58942917
-ro.boottime.init.first_stage=34942187
-ro.boottime.init.cold_boot_wait=205
-ro.boottime.logd=2854459529
-ro.boottime.ueventd=2642685467
-ro.boottime.qseecomd=9810447495
-ro.boottime.recovery=2878059477
-ro.boottime.keystore2=2860506300
-ro.boottime.prepdecrypt=8636841454
-ro.boottime.boot-hal-1-1=2875446717
-ro.boottime.health-hal-2-1=2879560935
-ro.boottime.servicemanager=2857643539
-ro.boottime.set_permissive=2645055206
-ro.boottime.hwservicemanager=2856203487
-ro.boottime.keymaster-4-1-qti=9872271193
-ro.boottime.vndservicemanager=2859064477
-ro.boottime.gatekeeper-1-0-qti=9875612651
+ro.boottime.adbd=2898887290
+ro.boottime.init=2554854946
+ro.boottime.init.selinux=58835365
+ro.boottime.init.first_stage=34936823
+ro.boottime.init.cold_boot_wait=191
+ro.boottime.logd=2872676144
+ro.boottime.ueventd=2674580936
+ro.boottime.qseecomd=9573857704
+ro.boottime.recovery=2894785311
+ro.boottime.keystore2=2878770102
+ro.boottime.prepdecrypt=8396134163
+ro.boottime.boot-hal-1-1=2892284269
+ro.boottime.health-hal-2-1=2896354373
+ro.boottime.servicemanager=2875906144
+ro.boottime.set_permissive=2676817915
+ro.boottime.hwservicemanager=2874400936
+ro.boottime.keymaster-4-1-qti=9649497443
+ro.boottime.vndservicemanager=2877348019
+ro.boottime.gatekeeper-1-0-qti=9652795568
 ro.product.bootimage.name=twrp_fogos
 ro.product.bootimage.brand=motorola
 ro.product.bootimage.model=moto g34 5G
@@ -928,10 +968,10 @@ init.svc.keymaster-4-1-qti=running
 init.svc.vndservicemanager=running
 init.svc.gatekeeper-1-0-qti=running
 init.svc.adbd=running
-init.svc_debug_pid.adbd=487
+init.svc_debug_pid.adbd=482
 init.svc_debug_pid.logd=416
-init.svc_debug_pid.ueventd=400
-init.svc_debug_pid.qseecomd=519
+init.svc_debug_pid.ueventd=401
+init.svc_debug_pid.qseecomd=514
 init.svc_debug_pid.recovery=422
 init.svc_debug_pid.keystore2=420
 init.svc_debug_pid.prepdecrypt=
@@ -940,9 +980,9 @@ init.svc_debug_pid.health-hal-2-1=423
 init.svc_debug_pid.servicemanager=418
 init.svc_debug_pid.set_permissive=
 init.svc_debug_pid.hwservicemanager=417
-init.svc_debug_pid.keymaster-4-1-qti=530
+init.svc_debug_pid.keymaster-4-1-qti=526
 init.svc_debug_pid.vndservicemanager=419
-init.svc_debug_pid.gatekeeper-1-0-qti=531
+init.svc_debug_pid.gatekeeper-1-0-qti=527
 keystore.crash_count=0
 ro.logd.kernel=true
 ro.product.ab_ota_partitions=boot,dtbo,odm,product,system,system_ext,vbmeta,vbmeta_system,vendor,vendor_boot
@@ -956,9 +996,6 @@ ro.boot.serialno=ZA222K3WXT
 ro.serialno=ZA222K3WXT
 service.adb.root=1
 external_storage.projid.enabled=1
-external_storage.casefold.enabled=1
-external_storage.sdcardfs.enabled=0
-dev.mnt.blk.vendor=
 dev.mnt.blk.metadata=sde
 net.bt.name=Android
 persist.sys.usb.config=adb
@@ -985,9 +1022,7 @@ ro.vendor.build.security_patch=2099-12-31
 ro.virtual_ab.enabled=true
 ro.vndk.version=32
 ro.product.vndk.version=32
-ro.crypto.volume.metadata.method=dm-default-key
 ro.crypto.volume.filenames_mode=aes-256-cts
-ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.allow_encrypt_override=true
 ro.crypto.type=file
 ro.crypto.state=encrypted
@@ -1007,10 +1042,10 @@ DEBUG: OrangeFox: SYSTEM_ROOT=1
 DEBUG: OrangeFox: PROPER_SAR=1
 DEBUG: OrangeFox: FOX_SCRIPT_DATE=20260324
 DEBUG: OrangeFox: ANDROID_SDK=37
-DEBUG: OrangeFox: INCREMENTAL_VERSION=1795839692
-DEBUG: OrangeFox: RELEASE_VERSION=17
+DEBUG: OrangeFox: INCREMENTAL_VERSION=37
+DEBUG: OrangeFox: RELEASE_VERSION=37
 DEBUG: OrangeFox: BUILD_FLAVOR=aospa_fogos-userdebug
-DEBUG: OrangeFox: ROM_FINGERPRINT=motorola/fogos_g/fogos:15/V1UGS35H.75-14-3-10/6668a-36fa40:user/release-keys
+DEBUG: OrangeFox: ROM_FINGERPRINT=motorola/aospa_fogos/fogos:17/CQ2A.261015.002-CP2A.260605.016/eng.nobody:userdebug/test-keys
 DEBUG: OrangeFox: Fox properties:
 [orangefox.crash_counter]: [0]
 [orangefox.postinit.status]: [1]
@@ -1022,10 +1057,9 @@ DEBUG: OrangeFox: Fox properties:
 [orangefox.super.mount_point]: [/super]
 [orangefox.super.partition]: [true]
 [orangefox.system.block_device]: [/dev/block/dm-1]
-[orangefox.system.fingerprint]: [motorola/fogos_g/fogos:15/V1UGS35H.75-14-3-10/6668a-36fa40:user/release-keys]
-[orangefox.system.incremental]: [1795839692]
+[orangefox.system.incremental]: [37]
 [orangefox.system.mount_point]: [/system_root]
-[orangefox.system.release]: [17]
+[orangefox.system.release]: [37]
 [orangefox.vendor.block_device]: [/dev/block/dm-3]
 [orangefox.vendor.mount_point]: [/vendor]
 [ro.orangefox.boot]: [1]
@@ -1043,8 +1077,8 @@ DEBUG: OrangeFox: Fox properties:
 [ro.orangefox.variant]: [default]
 [ro.orangefox.virtual_ab]: [1]
 I:Process ended with no errors.
-I:- Using the ROM's incremental version (1795839692)
-I:- Using the ROM's fingerprint (motorola/fogos_g/fogos:15/V1UGS35H.75-14-3-10/6668a-36fa40:user/release-keys)
+I:- Using the ROM's incremental version (37)
+I:- Using the ROM's fingerprint (motorola/aospa_fogos/fogos:17/CQ2A.261015.002-CP2A.260605.016/eng.nobody:userdebug/test-keys)
 I:Process ended with no errors.
 copying '/data/misc/keystore/persistent.sqlite' to '/tmp/misc/keystore/persistent.sqlite'
 SELinux contexts loaded from /file_contexts
@@ -1053,10 +1087,16 @@ I:Can't probe device /dev/block/sde26
 I:Unable to mount '/data'
 I:Actual block device: '/dev/block/sde26', current file system: 'f2fs'
 I:Unable to mount settings storage during GUI startup.
+I:Can't probe device /dev/block/dm-2
+I:Unable to mount '/system_ext'
+I:Actual block device: '/dev/block/dm-2', current file system: 'ext4'
+I:Can't probe device /dev/block/dm-3
+I:Unable to mount '/vendor'
+I:Actual block device: '/dev/block/dm-3', current file system: 'ext4'
 
 
 Partition Logs:
-/system_root | /dev/block/dm-1 | Size: 1045MB Used: 1042MB Free: 3MB Backup Size: 1042MB
+/system_root | /dev/block/dm-1 | Size: 1053MB Used: 1050MB Free: 3MB Backup Size: 1050MB
    Flags: Can_Be_Mounted IsPresent SlotSelect Is_Super 
    Primary_Block_Device: /dev/block/dm-1
    Display_Name: System
@@ -1070,8 +1110,8 @@ Partition Logs:
    Backup_Method: files
    Mount_Flags: 0, Mount_Options: barrier=1,discard
 
-/system_ext | /dev/block/dm-2 | Size: 769MB Used: 766MB Free: 2MB Backup Size: 766MB
-   Flags: Can_Be_Mounted IsPresent SlotSelect Is_Super 
+/system_ext | /dev/block/dm-2 | Size: 0MB Used: 0MB Free: 0MB Backup Size: 0MB
+   Flags: Can_Be_Mounted IsPresent SlotSelect Mount_Read_Only Is_Super 
    Primary_Block_Device: /dev/block/dm-2
    Display_Name: System_EXT
    Storage_Name: System_EXT
@@ -1098,8 +1138,8 @@ Partition Logs:
    Backup_Method: files
    Mount_Flags: 0, Mount_Options: barrier=1,discard
 
-/vendor | /dev/block/dm-3 | Size: 738MB Used: 736MB Free: 2MB Backup Size: 736MB
-   Flags: Can_Be_Mounted IsPresent SlotSelect Is_Super 
+/vendor | /dev/block/dm-3 | Size: 0MB Used: 0MB Free: 0MB Backup Size: 0MB
+   Flags: Can_Be_Mounted IsPresent SlotSelect Mount_Read_Only Is_Super 
    Primary_Block_Device: /dev/block/dm-3
    Display_Name: Vendor
    Storage_Name: Vendor
@@ -1341,7 +1381,7 @@ Partition Logs:
    Current_File_System: emmc
    Backup_Method: dd
 
-I:TWFunc::Fixup_Time: Pre-fix date and time: 1970-11-11--20-19-30
+I:TWFunc::Fixup_Time: Pre-fix date and time: 1970-11-12--00-13-51
 I:TWFunc::Fixup_Time: Setting time offset from file /sys/class/rtc/rtc0/since_epoch
 I:TWFunc::Fixup_Time: will attempt to use the ats files now.
 I:Can't probe device /dev/block/sde26
@@ -1382,8 +1422,8 @@ I:DEBUG: OrangeFox: the startup script has been executed.
 * Kernel:     5.4.233-moto-gb95f9e0ca75c
 * Custom ROM (SDK:37, Android 17)
 * fogos_g-user 15 V1UGS35H.75-14-3-10 6668a-36fa40 release-keys MV-186
-* (1795839692)
-* Fingerprint: motorola/fogos_g/fogos:15/V1UGS35H.75-14-3-10/6668a-36fa40:user/release-keys
+* (37)
+* Fingerprint: motorola/aospa_fogos/fogos:17/CQ2A.261015.002-CP2A.260605.016/eng.nobody:userdebug/test-keys
 --------------------------
 I:ROM Status: fogos_g-user 15 V1UGS35H.75-14-3-10 6668a-36fa40 release-keys MV-186
 I:ADB & MTP disabled by maintainer
@@ -1396,8 +1436,8 @@ I:Actual block device: '/dev/block/sde26', current file system: 'f2fs'
 I:Can't probe device /dev/block/sde26
 I:Unable to mount '/data'
 I:Actual block device: '/dev/block/sde26', current file system: 'f2fs'
-I:PassBak: Loaded backup
 I:Starting Adb Backup FIFO
+I:PassBak: Loaded backup
 I:Switching packages (OrangeFox)
 I:Set page: 'main'
 I:Set overlay: ''
@@ -1413,9 +1453,6 @@ I:Set overlay: ''
 I:operation_start: 'ADB'
 I:Set page: 'clear_vars'
 I:Set page: 'navbar'
-I:operation_end - status=0
 I:Set page: 'filemanagerlist'
+I:operation_end - status=0
 I:[MTP] created new mtpserver object
-I:TWFunc::Set_Brightness: Setting brightness control to 5
-I:TWFunc::Set_Brightness: Setting brightness control to 0
-Atomic Commit succeed
